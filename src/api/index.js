@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 import axios from "axios";
 
 const BASE = "https://jsonplace-univclone.herokuapp.com";
@@ -5,6 +6,7 @@ const BASE = "https://jsonplace-univclone.herokuapp.com";
 export const getUsers = async () => {
   try {
     const { data } = await axios.get(`${BASE}/users`);
+    return data;
   } catch (error) {
     throw error;
   }
@@ -19,13 +21,11 @@ export const getPostsByUser = async (userId) => {
   }
 };
 
-
-export const getToDosByUser = async (userId) => {
+export const getTodosByUser = async (userId) => {
   try {
-    const { data } = await axios.get(`${BASE}/users/${userId}/posts`)
+    const { data } = await axios.get(`${BASE}/users/${userId}/posts`);
     return data;
   } catch (error) {
     throw error;
   }
-}
-
+};

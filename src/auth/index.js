@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { useParams } from "react-router";
 
 export const storeCurrentUser = (user) => {
